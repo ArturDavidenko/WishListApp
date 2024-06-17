@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WishListApp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8c58befd0bd288e46d3e4762e2db5347976e3152")]
 [assembly: System.Reflection.AssemblyProductAttribute("WishListApp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WishListApp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
