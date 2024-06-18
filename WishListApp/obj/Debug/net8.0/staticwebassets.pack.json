@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\WishListApp.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\Home\\Desktop\\Programmer SOLO Q\\WishListApp\\WishListApp\\wwwroot\\css\\HomeStyle.css",
+      "PackagePath": "staticwebassets\\css\\HomeStyle.css"
+    },
+    {
       "Id": "C:\\Users\\Home\\Desktop\\Programmer SOLO Q\\WishListApp\\WishListApp\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
