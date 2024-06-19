@@ -1,5 +1,4 @@
-using Microsoft.EntityFrameworkCore;
-using WishListApp.Data;
+
 
 namespace WishListApp
 {
@@ -11,10 +10,6 @@ namespace WishListApp
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
-            builder.Services.AddDbContext<WLContext>(options => {
-                options.UseNpgsql(builder.Configuration.GetConnectionString("WishListDataBase"));
-            });
-
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.

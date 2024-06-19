@@ -2,6 +2,7 @@
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
+    @model List<WishItem>
 }
 
 <!DOCTYPE html>
@@ -23,9 +24,15 @@
         </section>
         <section class="list-section">
             <h2>Your Wishes</h2>
-            <ul id="wish-list">
-                <!-- Wish items will appear here -->
-            </ul>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                    <td><h1>Nr @item.Id</h1> </td>
+                        <td>Title: @item.Title</td>
+                        <td>Description: @item.Description</td>
+                    </tr>
+                    <br>
+                }
         </section>
     </main>
     <script src="script.js"></script>
