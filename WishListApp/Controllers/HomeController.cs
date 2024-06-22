@@ -25,14 +25,11 @@ namespace WishListApp.Controllers
                     string jsonResponse = await response.Content.ReadAsStringAsync();
                     wishItems = JsonSerializer.Deserialize<List<WishItem>>(jsonResponse);
                 }
-                else
-                {
-                    // Обработка ошибок
-                    ViewBag.Error = "Не удалось получить данные от API.";
-                }
+                
             }
 
             return View(wishItems);
         }
+
     }
 }
