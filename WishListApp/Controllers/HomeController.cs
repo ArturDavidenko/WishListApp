@@ -50,5 +50,15 @@ namespace WishListApp.Controllers
             return View("WishItemViewPage", wishItem);
         }
 
+        public async Task<IActionResult> DeleteWishItem(int id)
+        {
+            using (HttpClient httpClient = new HttpClient())
+            {
+                var response = await httpClient.DeleteAsync($"https://localhost:7043/api/WishItem/{id}");
+            }
+
+            return RedirectToAction("HomePage");
+        }
+
     }
 }
