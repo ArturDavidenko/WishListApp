@@ -26,11 +26,11 @@
                 @foreach (var item in Model)
                 {
                     <tr>
-                    <td><h1>Nr @item.Id</h1> </td>
+                    <td><h1>Nr @item.Id</h1></td>
                         <td>Title: @item.Title</td>
                         <td>Description: @item.Description</td>
                     <br>
-                        <td><button asp-action="" asp-controller="HomeController">Show Wish Iteam</button></td>
+                    <a asp-controller="Home" asp-action="GetWishItemView" asp-route-id="@item.Id"><button>Show Wish Item</button></a>
                     </tr>
                     <br>
                 }

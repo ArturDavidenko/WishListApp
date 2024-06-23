@@ -31,5 +31,24 @@ namespace WishListApp.Controllers
             return View(wishItems);
         }
 
+
+        public async Task<IActionResult> GetWishItemView(int id)
+        {
+            WishItem wishItem = null;
+
+            using (HttpClient httpClient = new HttpClient())
+            {
+                HttpResponseMessage response = await httpClient.GetAsync($"https://localhost:7043/api/WishItem/{id}");
+
+                if (response.IsSuccessStatusCode)
+                {
+                    string jsonResponse = await response.Content.ReadAsStringAsync();
+                    wishItem = JsonSerializer.Deserialize<WishItem>(jsonResponse);
+                }
+
+            }
+            return View("WishItemViewPage", wishItem);
+        }
+
     }
 }
