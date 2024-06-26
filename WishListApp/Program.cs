@@ -1,5 +1,8 @@
 
 
+using WishListApp.Repository;
+using WishListApp.Repository.Interfaces;
+
 namespace WishListApp
 {
     public class Program
@@ -10,6 +13,8 @@ namespace WishListApp
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+            builder.Services.AddScoped<WishRepository>();
+            builder.Services.AddScoped<IWishRepository, WishRepository>();
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.

@@ -2,11 +2,19 @@ using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 using System.Text.Json;
 using WishListApp.Models;
+using WishListApp.Repository;
 
 namespace WishListApp.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly WishRepository _repository;
+
+        public HomeController(WishRepository repository)
+        {
+            _repository = repository;
+        }
+
         public IActionResult Index()
         {
             return View();
@@ -14,49 +22,20 @@ namespace WishListApp.Controllers
        
         public async Task<IActionResult> HomePage()
         {
-            List<WishItem> wishItems = new List<WishItem>();
-
-            using (HttpClient httpClient = new HttpClient())
-            {
-                HttpResponseMessage response = await httpClient.GetAsync("https://localhost:7043/api/WishItem");
-
-                if (response.IsSuccessStatusCode)
-                {
-                    string jsonResponse = await response.Content.ReadAsStringAsync();
-                    wishItems = JsonSerializer.Deserialize<List<WishItem>>(jsonResponse);
-                }
-                
-            }
-
+            var wishItems =  await _repository.GetWishItems();
             return View(wishItems);
         }
 
 
         public async Task<IActionResult> GetWishItemView(int id)
         {
-            WishItem wishItem = null;
-
-            using (HttpClient httpClient = new HttpClient())
-            {
-                HttpResponseMessage response = await httpClient.GetAsync($"https://localhost:7043/api/WishItem/{id}");
-
-                if (response.IsSuccessStatusCode)
-                {
-                    string jsonResponse = await response.Content.ReadAsStringAsync();
-                    wishItem = JsonSerializer.Deserialize<WishItem>(jsonResponse);
-                }
-
-            }
+            var wishItem =  await _repository.GetWishItem(id);
             return View("WishItemViewPage", wishItem);
         }
 
         public async Task<IActionResult> DeleteWishItem(int id)
         {
-            using (HttpClient httpClient = new HttpClient())
-            {
-                var response = await httpClient.DeleteAsync($"https://localhost:7043/api/WishItem/{id}");
-            }
-
+            await _repository.DeleteWishItem(id);
             return RedirectToAction("HomePage");
         }
 
