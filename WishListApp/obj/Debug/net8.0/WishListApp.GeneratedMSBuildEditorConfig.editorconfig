@@ -30,8 +30,16 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Home/Desktop/Programmer SOLO Q/WishListApp/WishListApp/Views/Home/WishItemViewPage.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxXaXNoSXRlbVZpZXdQYWdlLmNzaHRtbA==
+[C:/Users/Home/Desktop/Programmer SOLO Q/WishListApp/WishListApp/Views/Shared/EditWishItemPage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVkaXRXaXNoSXRlbVBhZ2UuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Home/Desktop/Programmer SOLO Q/WishListApp/WishListApp/Views/Shared/WishItemAddPage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFdpc2hJdGVtQWRkUGFnZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Home/Desktop/Programmer SOLO Q/WishListApp/WishListApp/Views/Shared/WishItemViewPage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFdpc2hJdGVtVmlld1BhZ2UuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Home/Desktop/Programmer SOLO Q/WishListApp/WishListApp/Views/_ViewImports.cshtml]

@@ -9,5 +9,9 @@ namespace WishListApp.Repository.Interfaces
         public Task<WishItem> GetWishItem(int id);
 
         public Task DeleteWishItem(int id);
+
+        public Task CreateWishItem(WishItem wishItem);
+
+        public Task UpdateWishItem(WishItem item);
     }
 }

@@ -19,6 +19,11 @@ namespace WishListApp.Controllers
         {
             return View();
         }
+
+        public IActionResult WishItemAddPage()
+        {
+            return View();
+        }
        
         public async Task<IActionResult> HomePage()
         {
@@ -33,9 +38,27 @@ namespace WishListApp.Controllers
             return View("WishItemViewPage", wishItem);
         }
 
+        public async Task<IActionResult> EditWishItemPage(int id)
+        {
+            var wishItem = await _repository.GetWishItem(id);
+            return View("EditWishItemPage", wishItem);
+        }
+
+        public async Task<IActionResult> EditWishItem(WishItem wishitem)
+        {
+            await _repository.UpdateWishItem(wishitem);
+            return RedirectToAction("HomePage");
+        }
+
         public async Task<IActionResult> DeleteWishItem(int id)
         {
             await _repository.DeleteWishItem(id);
+            return RedirectToAction("HomePage");
+        }
+
+        public async Task<IActionResult> CreateWishItem(WishItem wishItem)
+        {
+            await _repository.CreateWishItem(wishItem);
             return RedirectToAction("HomePage");
         }
 
